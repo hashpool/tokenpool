@@ -32,6 +32,12 @@
           "_0xbitcointoken": {"name":"0xBitcoinToken", "blockchain_address":"0xb491574844b84dCBAeF821990df27122a178a283"},
           "batchedpayments": {"name":"BatchedPayments", "blockchain_address":"0x24a19eE5A5C8757ACDEBe542a9436D9C796d1c9E"} 
         }
-      } 
+      },
+      "bsc": {
+        "contracts": {
+          "_0xbitcointoken": {"name":"0xBitcoinToken", "blockchain_address":"0xE7Cb24F449973D5B3520E5b93D88B405903c75Fb"},
+          "batchedpayments": {"name":"BatchedPayments", "blockchain_address":" "} 
+        }
+      }
     }
 }
