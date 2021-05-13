@@ -77,7 +77,7 @@
 
 
 
-<div class="whitespace-md"></div>
+<!-- <div class="whitespace-md"></div>
 
       <div   class="box  background-secondary overflow-x-auto" 
          style="  min-height:480px;">
@@ -111,7 +111,7 @@
           </tbody>
         </table>
 
-      </div>
+      </div> -->
 
 
 
@@ -156,7 +156,7 @@ export default {
          minerData:{}, 
          poolData: {},
          shares: [],
-         payment_tx: [] 
+        //  payment_tx: [] 
     }
   },
   created(){
@@ -187,10 +187,10 @@ export default {
        this.shares = data 
     });
 
-    this.socketsListener.on('minerPayments', (data) => {               
-        console.log('got payments',data)
-       this.payment_tx = data 
-    });
+    // this.socketsListener.on('minerPayments', (data) => {               
+    //     console.log('got payments',data)
+    //    this.payment_tx = data 
+    // });
 
     this.pollSockets()
 
@@ -200,7 +200,7 @@ export default {
       this.socketHelper.emitEvent('getPoolData')
       this.socketHelper.emitEvent( 'getMinerData', {ethMinerAddress: this.publicAddress})
       this.socketHelper.emitEvent( 'getMinerShares', {ethMinerAddress: this.publicAddress})
-      this.socketHelper.emitEvent( 'getMinerPayments', {ethMinerAddress: this.publicAddress})
+      // this.socketHelper.emitEvent( 'getMinerPayments', {ethMinerAddress: this.publicAddress})
     },
 
 

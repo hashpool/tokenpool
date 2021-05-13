@@ -101,13 +101,13 @@
         v-bind:transactionsList="recentSolutionTx"
         />
         </section>
-        <section>
+        <!-- <section>
           <TransactionsTable
             class="mb-4"
             label="Recent Payments"
             v-bind:transactionsList="recentPaymentTx"
           />
-        </section>
+        </section> -->
 
 
         </div>
@@ -165,7 +165,7 @@ export default {
       accountList: [] ,
 
       recentSolutionTx:[],
-      recentPaymentTx:[] 
+      // recentPaymentTx:[] 
     }
   },
   created(){
@@ -191,9 +191,9 @@ export default {
             this.recentSolutionTx=data
         });
 
-         this.socketsListener.on('recentPayments', (data) => {  
-            this.recentPaymentTx=data
-        });
+        //  this.socketsListener.on('recentPayments', (data) => {  
+        //     this.recentPaymentTx=data
+        // });
 
       this.pollSockets()
   },
@@ -202,7 +202,7 @@ export default {
       this.socketHelper.emitEvent('getPoolData')
       this.socketHelper.emitEvent('getPoolStatus')
       this.socketHelper.emitEvent('getRecentSolutions')
-      this.socketHelper.emitEvent('getRecentPayments')
+      // this.socketHelper.emitEvent('getRecentPayments')
     },
 
     rawAmountToFormatted(amount, decimals){
